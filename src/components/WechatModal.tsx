@@ -16,7 +16,7 @@ export const WechatModal: React.FC<WechatModalProps> = ({
   open,
   onClose,
   wechatId,
-  qrSrc = "/wechat-qr.png",
+  qrSrc = "/wechat-qr.jpg",
 }) => {
   const [copied, setCopied] = React.useState(false);
 
@@ -116,6 +116,19 @@ export const WechatModal: React.FC<WechatModalProps> = ({
                 width={240}
                 height={240}
                 className="rounded-lg"
+                onError={(e) => {
+                  console.error('微信二维码加载失败:', qrSrc);
+                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.parentElement!.innerHTML = `
+                    <div class="w-60 h-60 bg-gray-200 rounded-lg flex items-center justify-center border-2 border-dashed border-gray-300">
+                      <div class="text-center text-gray-500">
+                        <div class="text-6xl mb-2">📱</div>
+                        <p class="text-sm">二维码加载失败</p>
+                        <p class="text-xs mt-1">请检查图片路径</p>
+                      </div>
+                    </div>
+                  `;
+                }}
               />
             </div>
 
