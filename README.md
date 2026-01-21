@@ -1,6 +1,8 @@
-## Sidefolio - Portfolio website template
+## Louis Portfolio - Personal Portfolio Website
 
-As seen on [Aceternity UI](https://ui.aceternity.com/templtes/sidefolio)
+Built with Next.js, featuring contact form and WeChat modal functionality.
+
+Original template from [Aceternity UI](https://ui.aceternity.com/templtes/sidefolio)
 
 ## Built with
 - Next.js
