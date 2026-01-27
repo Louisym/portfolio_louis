@@ -6,6 +6,7 @@ import rehypePrism from "@mapbox/rehype-prism";
 const nextConfig = {
   images: {
     domains: ["images.unsplash.com", "res.cloudinary.com"],
+    unoptimized: process.env.NODE_ENV === 'development', // 开发环境禁用优化
   },
   experimental: {
     mdxRs: true,
