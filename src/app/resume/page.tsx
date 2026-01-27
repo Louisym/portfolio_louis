@@ -13,7 +13,7 @@ export default function Home() {
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center space-x-4">
           <span className="text-4xl">💼</span>
-          <Heading className="font-black">Work History</Heading>
+          <Heading className="font-black">工作经历</Heading>
         </div>
         <DownloadButton />
       </div>

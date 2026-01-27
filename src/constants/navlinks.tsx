@@ -1,41 +1,29 @@
 import {
-  IconArticle,
   IconBolt,
   IconBriefcase2,
   IconMail,
   IconMessage2,
-  IconRobot,
 } from "@tabler/icons-react";
 
 export const navlinks = [
   {
     href: "/",
-    label: "Home",
+    label: "首页",
     icon: IconBolt,
   },
   {
     href: "/about",
-    label: "About",
+    label: "关于我",
     icon: IconMessage2,
   },
   {
     href: "/projects",
-    label: "Projects",
+    label: "项目经历",
     icon: IconBriefcase2,
   },
   {
-    href: "/blog",
-    label: "Articles",
-    icon: IconArticle,
-  },
-  {
-    href: "/chat",
-    label: "AI助理",
-    icon: IconRobot,
-  },
-  {
     href: "/contact",
-    label: "Contact",
+    label: "联系我",
     icon: IconMail,
   },
 ];
