@@ -11,7 +11,7 @@ import { socials } from "@/constants/socials";
 import { Badge } from "./Badge";
 import { AnimatePresence, motion } from "framer-motion";
 import { IconLayoutSidebarRightCollapse } from "@tabler/icons-react";
-import { isMobile } from "@/lib/utils";
+import { isMobile } from "../lib/utils";
 import { WechatModal } from "./WechatModal";
 
 export const Sidebar = () => {
