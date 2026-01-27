@@ -1,7 +1,6 @@
 import { Container } from "@/components/Container";
 import { Heading } from "@/components/Heading";
 import { Paragraph } from "@/components/Paragraph";
-import { Chat } from "@/components/Chat";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,12 +15,8 @@ export default function ChatPage() {
       <Heading className="font-black">AI助理</Heading>
       <Paragraph className="max-w-xl mt-4 mb-8">
         有什么关于我的问题吗？我的AI助理可以帮你了解我的技能、项目经验、职业背景等信息。
-        随时问我任何问题！
+        现在AI助理已经移到了右下角的悬浮窗中，你可以在任何页面点击机器人图标与我对话！
       </Paragraph>
-      
-      <div className="max-w-4xl">
-        <Chat />
-      </div>
       
       <div className="mt-8 p-4 bg-blue-50 rounded-lg">
         <h3 className="font-semibold text-blue-900 mb-2">💡 你可以问我：</h3>

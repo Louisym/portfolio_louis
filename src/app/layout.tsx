@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 import { Footer } from "@/components/Footer";
+import FloatingAI from "@/components/FloatingAI";
 
 const inter = Inter({
   subsets: ["latin", "latin-ext"],
@@ -48,6 +49,7 @@ export default function RootLayout({
             <Footer />
           </div>
         </div>
+        <FloatingAI />
       </body>
     </html>
   );
