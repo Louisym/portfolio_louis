@@ -8,14 +8,29 @@ export async function GET() {
     const hasSupabaseKey = !!process.env.SUPABASE_SERVICE_ROLE_KEY;
 
     // 不显示实际密钥，只显示是否存在
-    const debug = {
+    const debug: {
+      timestamp: string;
+      environment: string | undefined;
+      configs: {
+        openai_configured: boolean;
+        openai_key_prefix: string;
+        supabase_url_configured: boolean;
+        supabase_url: string;
+        supabase_key_configured: boolean;
+        supabase_key_prefix: string;
+      };
+      supabase_test?: {
+        connection: string;
+        error: string | null;
+      };
+    } = {
       timestamp: new Date().toISOString(),
       environment: process.env.NODE_ENV,
       configs: {
         openai_configured: hasOpenAI,
         openai_key_prefix: hasOpenAI ? process.env.OPENAI_API_KEY?.substring(0, 7) + '...' : 'not_set',
         supabase_url_configured: hasSupabaseUrl,
-        supabase_url: hasSupabaseUrl ? process.env.NEXT_PUBLIC_SUPABASE_URL : 'not_set',
+        supabase_url: hasSupabaseUrl ? (process.env.NEXT_PUBLIC_SUPABASE_URL || 'not_set') : 'not_set',
         supabase_key_configured: hasSupabaseKey,
         supabase_key_prefix: hasSupabaseKey ? 'eyJ...' : 'not_set',
       }
