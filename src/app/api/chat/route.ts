@@ -130,8 +130,28 @@ Louis的背景信息：
 
   } catch (error) {
     console.error('聊天API错误:', error);
+    
+    // 详细错误信息用于调试
+    let errorMessage = '服务器内部错误，请稍后重试';
+    
+    if (error instanceof Error) {
+      // OpenAI API错误
+      if (error.message.includes('API key')) {
+        errorMessage = 'OpenAI API密钥配置错误';
+      } else if (error.message.includes('quota')) {
+        errorMessage = 'OpenAI API配额已用完';
+      } else if (error.message.includes('Supabase')) {
+        errorMessage = '数据库连接错误';
+      } else {
+        // 在开发/测试环境显示详细错误
+        errorMessage = process.env.NODE_ENV === 'production' 
+          ? '服务器内部错误，请稍后重试'
+          : `错误: ${error.message}`;
+      }
+    }
+    
     return NextResponse.json(
-      { error: '服务器内部错误，请稍后重试' },
+      { error: errorMessage },
       { status: 500 }
     );
   }
